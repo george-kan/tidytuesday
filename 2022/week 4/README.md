@@ -1,1 +1,1 @@
-![Best boardgames](Rplot.png)
+![Best boardgames](Plot.png)
