@@ -29,8 +29,11 @@ decade_v =  c("Earlier\n games", "1950s", "1960s", "1970s", "1980s", "1990s", "2
 
  
 ggplot(top_3, aes(y = rank, x = bayes_average, color = decade)) +
-  geom_text(aes(label = name), check_overlap = TRUE,  hjust="inward", size = 4.3) +
+  geom_point() +
+  geom_text(aes(label = name), check_overlap = TRUE,  hjust = -0.1, size = 4.3) +
+  #geom_point() +
   scale_y_continuous(breaks = seq(2, 27, 3), labels = decade_v) +
+  scale_x_continuous(limits = c(5, 10), breaks = c(5, 7, 9)) +
   scale_color_manual(values = met.brewer("Cross")) +
   labs(x = "Adjusted rating", title = "Top 3 board games by decade") + 
   theme(axis.title.y = element_blank(),
@@ -39,3 +42,4 @@ ggplot(top_3, aes(y = rank, x = bayes_average, color = decade)) +
         plot.title = element_text(size = 20, hjust = 0.5),
         legend.position = "none",
         panel.grid.major = element_blank())
+
