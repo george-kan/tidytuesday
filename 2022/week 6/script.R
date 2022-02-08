@@ -3,6 +3,7 @@ library(scales)
 library(geojsonio)
 library(broom)
 library(mapproj)
+library(rgeos)
 set.seed(30)
 
 airmen <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-08/airmen.csv')
@@ -37,7 +38,7 @@ ggplot() +
   geom_text(data=centers, aes(x=x, y=y, label=name), color="black", size=3.5, alpha=0.6) +
   theme_void() +
   coord_map() +
-  scale_fill_gradient(low = "white", high=muted("green")) +
+  scale_fill_gradient(low = "white", high=muted("lightblue")) +
   labs(title = "Members of the Tuskegee Airmen by state", fill = "Airmen") + 
   theme(
     legend.position = "bottom",
@@ -45,7 +46,7 @@ ggplot() +
     plot.background = element_rect(fill = "transparent", color = NA), 
     panel.background = element_rect(fill = "transparent", color = NA), 
     legend.background = element_rect(fill = "transparent", color = NA),
-    plot.title = element_text(size= 22, hjust=0.5, color = "#4e4d47", margin = margin(b = -0.1, t = 0.4, l = 2, unit = "cm")),
+    plot.title = element_text(size= 22, hjust=0.5, color = "grey30", margin = margin(b = -0.1, t = 0.4, l = 2, unit = "cm")),
   ) + 
   guides(fill = guide_colorbar( barwidth = unit(20, "lines"), 
                                 barheight = unit(.3, "lines"),
