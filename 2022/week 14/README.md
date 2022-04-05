@@ -1,1 +1,1 @@
-![Publications_by_state](Rplot02.png)
+![Publications_by_state](Rplot.png)
