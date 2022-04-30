@@ -21,7 +21,6 @@ news_orgs <- news_orgs %>%
                        full_state = paste0(state, "(", n(), ")"))
 
 
-png(filename="Rplot.png", width=900, height=1250)
 
 ggplot() + 
   geom_jitter(data  = news_orgs  %>% filter(printed == F), 
@@ -36,6 +35,5 @@ ggplot() +
         plot.title = element_text(family = "Roboto", hjust = 0.5),
         panel.grid.major.x = element_blank())
 
-dev.off()
 
 
